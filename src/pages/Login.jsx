@@ -22,7 +22,6 @@ const Login = () => {
 
   const handleClickLogout = () => {
     dispatch(logout());
-    //TODO: terminar quedamos en 1:00
   };
 
   return (

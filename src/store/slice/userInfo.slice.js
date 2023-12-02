@@ -7,16 +7,18 @@ const initialState = {
 };
 
 const userInfoSlice = createSlice({
-  initialState,
+  initialState: JSON.parse(localStorage.getItem('userInfo')) ?? initialState,
   name: 'userInfo',
   reducers: {
     setUserInfo: (state, action) => {
       const responseLogin = action.payload;
       const newState = { ...state, ...responseLogin };
+      localStorage.setItem('userInfo', JSON.stringify(newState));
       return newState;
     },
     logout: (state) => {
       const newState = { ...state, ...initialState };
+      localStorage.setItem('userInfo', JSON.stringify(newState));
       return newState;
     },
   },

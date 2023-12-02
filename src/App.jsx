@@ -5,6 +5,7 @@ import Login from './pages/Login';
 import ProductDetail from './pages/ProductDetail';
 import Purchases from './pages/Purchases';
 import Header from './components/layout/Header';
+import ProtectedRoutes from './components/auth/ProtectedRoutes';
 
 function App() {
   return (
@@ -14,7 +15,9 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/products/:id" element={<ProductDetail />} />
-        <Route path="/purchases" element={<Purchases />} />
+        <Route element={<ProtectedRoutes />}>
+          <Route path="/purchases" element={<Purchases />} />
+        </Route>
       </Routes>
     </main>
   );
