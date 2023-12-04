@@ -83,7 +83,7 @@ const Login = () => {
             />
           </div>
 
-          <button className="block w-full text-white py-2 rounded-md bg-emerald-300 hover:bg-emerald-400 transition-all duration-300 ease-in-out">
+          <button className="block w-full text-white py-2 bg-emerald-300 hover:bg-emerald-400 transition-all duration-300 ease-in-out">
             Login
           </button>
 
