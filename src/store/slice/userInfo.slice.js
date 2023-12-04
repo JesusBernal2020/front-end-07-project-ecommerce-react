@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import axios from 'axios';
+import { axiosEcommerce } from '../../utils/configAxios';
 
 const initialState = {
   token: '',
@@ -27,10 +27,8 @@ const userInfoSlice = createSlice({
 export const { setUserInfo, logout } = userInfoSlice.actions;
 
 export const loginUser = (dataForm) => (dispatch) => {
-  const URL = 'https://e-commerce-api-v2.academlo.tech/api/v1/users/login';
-
-  axios
-    .post(URL, dataForm)
+  axiosEcommerce
+    .post('/users/login', dataForm)
     .then(({ data }) => dispatch(setUserInfo(data)))
     .catch((err) => console.log(err));
 };
