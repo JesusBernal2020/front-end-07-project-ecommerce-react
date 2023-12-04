@@ -62,7 +62,7 @@ const Home = () => {
 
         <section>
           <h4>Category</h4>
-          <ul>
+          <ul className="cursor-pointer">
             <li onClick={handleClickCategory} data-category="">
               All
             </li>
