@@ -1,9 +1,10 @@
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 const Product = ({ product }) => {
   console.log(product);
   return (
-    <article>
+    <Link to={`/products/${product.id}`}>
       <div className="h-[200px] overflow-hidden p-4 relative group">
         <img
           className="w-full h-full object-contain opacity-100 group-hover:opacity-0 trasition-opacity duration-500"
@@ -29,7 +30,7 @@ const Product = ({ product }) => {
           <i className="bx bxs-cart"></i>
         </button>
       </section>
-    </article>
+    </Link>
   );
 };
 
@@ -38,3 +39,4 @@ Product.propTypes = {
 };
 
 export default Product;
+//TODO: 50:00 QUEDAMOS AQUI
