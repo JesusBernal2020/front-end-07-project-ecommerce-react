@@ -3,6 +3,12 @@ import { Link } from 'react-router-dom';
 
 const Product = ({ product }) => {
   console.log(product);
+
+  const handleClickAddProduct = (e) => {
+    e.preventDefault();
+    console.log('add Product');
+  };
+
   return (
     <Link to={`/products/${product.id}`}>
       <div className="h-[200px] overflow-hidden p-4 relative group">
@@ -26,7 +32,7 @@ const Product = ({ product }) => {
         <span>Price</span>
         <span> ${product.price}</span>
 
-        <button>
+        <button onClick={handleClickAddProduct}>
           <i className="bx bxs-cart"></i>
         </button>
       </section>

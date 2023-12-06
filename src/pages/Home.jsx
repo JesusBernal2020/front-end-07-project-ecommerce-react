@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { useEffect } from 'react';
 import { axiosEcommerce } from '../utils/configAxios';
-import Product from '../components/home/Product';
+/* import Product from '../components/home/Product'; */
+import ListProducts from '../components/home/ListProducts';
 
 const Home = () => {
   const [products, setProducts] = useState([]);
@@ -33,15 +34,6 @@ const Home = () => {
       .then(({ data }) => setCategories(data))
       .catch((err) => console.log(err));
   }, []);
-
-  /* useEffect(() => {
-    // const URL = 'https://e-commerce-api-v2.academlo.tech/api/v1';
-
-    axiosEcommerce
-      .get('/products')
-      .then(({ data }) => setProducts(data))
-      .catch((err) => console.log(err));
-  }, []); */
 
   useEffect(() => {
     axiosEcommerce
@@ -77,11 +69,7 @@ const Home = () => {
             ))}
           </ul>
         </section>
-        <section className="grid gap-10 px-2">
-          {productsByName.map((product) => (
-            <Product key={product.id} product={product} />
-          ))}
-        </section>
+        <ListProducts products={productsByName} />
       </form>
     </section>
   );
