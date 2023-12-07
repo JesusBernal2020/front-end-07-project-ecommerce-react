@@ -3,9 +3,10 @@ import './App.css';
 import Home from './pages/Home';
 import Login from './pages/Login';
 import ProductDetail from './pages/ProductDetail';
-import Purchases from './pages/Purchases';
 import Header from './components/layout/Header';
 import ProtectedRoutes from './components/auth/ProtectedRoutes';
+import Purchases from './pages/Purchases';
+import Cart from './components/cart/Cart';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path="/purchases" element={<Purchases />} />
         </Route>
       </Routes>
+      <Cart />
     </main>
   );
 }

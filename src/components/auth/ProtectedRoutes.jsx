@@ -5,7 +5,7 @@ const ProtectedRoutes = () => {
   const { token } = useSelector((store) => store.userInfo);
 
   if (token) {
-    <Outlet />;
+    return <Outlet />;
   } else {
     return <Navigate to="login" />;
   }

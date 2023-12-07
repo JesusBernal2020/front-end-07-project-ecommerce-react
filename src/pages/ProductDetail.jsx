@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { axiosEcommerce } from '../utils/configAxios';
 import ListProducts from '../components/home/ListProducts';
+import { sliderStyles } from '../utils/sliderStyles';
 
 const ProductDetail = () => {
   const [product, setProduct] = useState(null);
@@ -60,7 +61,9 @@ const ProductDetail = () => {
       <section className="grid gap-6 sm:grid-cols-2 items-center">
         {/*slider */}
         <article className="overflow-hidden relative">
-          <section className="flex w-[300%] -ml-[0%]">
+          <section
+            className={`flex w-[300%] transition-all duration-300 ${sliderStyles[imageToShow]} `}
+          >
             <div className="h-[300px] w-[calc(100%_/_3)]">
               <img
                 className="w-full h-full object-contain"
