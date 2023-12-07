@@ -3,6 +3,8 @@ import { Link, useParams } from 'react-router-dom';
 import { axiosEcommerce } from '../utils/configAxios';
 import ListProducts from '../components/home/ListProducts';
 import { sliderStyles } from '../utils/sliderStyles';
+import { addProductCart } from '../store/slice/cart.slice';
+import { useDispatch } from 'react-redux';
 
 const ProductDetail = () => {
   const [product, setProduct] = useState(null);
@@ -11,6 +13,8 @@ const ProductDetail = () => {
   const [imageToShow, setImageToShow] = useState(1);
 
   const { id } = useParams();
+
+  const dispatch = useDispatch();
 
   const hanldeClickPlus = () => setQuantity(quantity + 1);
   const hanldeClickless = () => {
@@ -29,6 +33,14 @@ const ProductDetail = () => {
     if (imageToShow > 1) {
       setImageToShow(imageToShow - 1);
     }
+  };
+
+  const handleClickAddProduct = () => {
+    const productToAdd = {
+      quantity,
+      productId: product.id,
+    };
+    dispatch(addProductCart(productToAdd));
   };
 
   useEffect(() => {
@@ -135,7 +147,10 @@ const ProductDetail = () => {
               </div>
             </article>
           </section>
-          <button className="block w-full text-white py-2 rounded-md bg-emerald-300 hover:bg-emerald-400 transition-all duration-300 ease-in-out">
+          <button
+            onClick={handleClickAddProduct}
+            className="block w-full text-white py-2 rounded-md bg-emerald-300 hover:bg-emerald-400 transition-all duration-300 ease-in-out"
+          >
             Add to cart <i className="bx bxs-cart"></i>
           </button>
 

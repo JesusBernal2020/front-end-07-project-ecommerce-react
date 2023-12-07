@@ -1,12 +1,15 @@
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import { addProductCart } from '../../store/slice/cart.slice';
+import { useDispatch } from 'react-redux';
 
 const Product = ({ product }) => {
-  console.log(product);
+  const dispatch = useDispatch();
 
   const handleClickAddProduct = (e) => {
     e.preventDefault();
-    console.log('add Product');
+    const productToAdd = { quantity: 1, productId: product.id };
+    dispatch(addProductCart(productToAdd));
   };
 
   return (
