@@ -25,9 +25,9 @@ const Login = () => {
   };
 
   return (
-    <section className="bg-[#f7f7f7] grid place-content-center p-4">
+    <section className="bg-[#f7f7f7] grid place-content-center px-4 py-14">
       {token ? (
-        <section className="bg-white rounded-xl p-4 w-[260px] grid gap-6 shadow-lg text-center">
+        <section className="bg-white rounded-xl p-4 w-[260px] min-h-[100px] md:w-[320px] py-20 grid gap-6 shadow-lg text-center">
           <i className="bx bxs-user-circle text-8xl"></i>
           <span className="font-bold">
             {user.firstName} {user.lastName}

@@ -64,7 +64,7 @@ const ProductDetail = () => {
 
   return (
     <section className="p-2 max-w-[1000px] mx-auto">
-      <section className="flex text-xs gap-2 items-center">
+      <section className="flex gap-2 items-center py-4 text-base justify-center md:justify-start md:pl-10">
         <Link to="/">Home</Link>
         <div className="h-[6px] aspect-square rounded-full bg-emerald-400"></div>
         <span className="font-bold truncate w-[200px]">{product?.title}</span>
@@ -76,21 +76,21 @@ const ProductDetail = () => {
           <section
             className={`flex w-[300%] transition-all duration-300 ${sliderStyles[imageToShow]} `}
           >
-            <div className="h-[300px] w-[calc(100%_/_3)]">
+            <div className="p-14 h-[300px]  w-[calc(100%_/_3)]">
               <img
                 className="w-full h-full object-contain"
                 src={product?.images[0].url}
                 alt=""
               />
             </div>
-            <div className="h-[300px] w-[calc(100%_/_3)]">
+            <div className="p-14 h-[300px] w-[calc(100%_/_3)]">
               <img
                 className="w-full h-full object-contain"
                 src={product?.images[1].url}
                 alt=""
               />
             </div>
-            <div className="h-[300px] w-[calc(100%_/_3)]">
+            <div className="p-14 h-[300px] w-[calc(100%_/_3)]">
               <img
                 className="w-full h-full object-contain"
                 src={product?.images[2].url}
@@ -100,22 +100,22 @@ const ProductDetail = () => {
           </section>
           <button
             onClick={handleClickPriviusImage}
-            className="absolute top-1/2 left-2 text-2xl bg-emerald-400 h-[35px] rounded-full aspect-square text-white -translate-y-1/2"
+            className="absolute top-1/2 left-2 text-2xl bg-emerald-400 h-[30px] rounded-full aspect-square text-white -translate-y-1/2"
           >
             <i className="bx bx-chevron-left"></i>
           </button>
           <button
             onClick={handleClickNextImage}
-            className="absolute top-1/2 right-2 text-2xl bg-emerald-400 h-[35px] rounded-full aspect-square text-white -translate-y-1/2"
+            className="absolute top-1/2 right-2 text-2xl bg-emerald-400 h-[30px] rounded-full aspect-square text-white -translate-y-1/2"
           >
             <i className="bx bx-chevron-right"></i>
           </button>
         </article>
         {/*detalle del producto */}
-        <article className="grid gap-6">
+        <article className="grid px-4 gap-6">
           <div>
             <h4 className="text-gray-300 font-semibold">{product?.brand}</h4>
-            <span className="font-semibold block text-lg ml-2">
+            <span className="font-bold block text-xl ml-2">
               {product?.title}
             </span>
           </div>
@@ -123,7 +123,7 @@ const ProductDetail = () => {
           <section className="grid grid-cols-2">
             <article>
               <h4 className="text-gray-300 font-semibold">Price</h4>
-              <span className="font-semibold block text-lg ml-2">
+              <span className="font-bold block text-lg ml-2">
                 ${product?.price}
               </span>
             </article>
@@ -157,8 +157,10 @@ const ProductDetail = () => {
           <p className="text-sm">{product?.description}</p>
         </article>
       </section>
-      <section>
-        <h3>Discorver Similar items</h3>
+      <section className="py-20">
+        <h3 className="px-4 pb-14 text-2xl text-emerald-400 font-bold">
+          Discorver Similar items
+        </h3>
         <ListProducts products={similarProducts} />
       </section>
     </section>

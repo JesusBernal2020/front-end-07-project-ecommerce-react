@@ -7,10 +7,11 @@ import Header from './components/layout/Header';
 import ProtectedRoutes from './components/auth/ProtectedRoutes';
 import Purchases from './pages/Purchases';
 import Cart from './components/cart/Cart';
+import Footer from './components/layout/Footer';
 
 function App() {
   return (
-    <main className="grid grid-rows-[auto_1fr] min-h-screen">
+    <main className="grid grid-rows-[auto_1fr] min-h-screen font-primary">
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -20,6 +21,7 @@ function App() {
           <Route path="/purchases" element={<Purchases />} />
         </Route>
       </Routes>
+      <Footer />
       <Cart />
     </main>
   );

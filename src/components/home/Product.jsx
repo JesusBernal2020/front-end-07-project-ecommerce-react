@@ -13,8 +13,11 @@ const Product = ({ product }) => {
   };
 
   return (
-    <Link to={`/products/${product.id}`}>
-      <div className="h-[200px] overflow-hidden p-4 relative group">
+    <Link
+      to={`/products/${product.id}`}
+      className="w-[280px] border-2 rounded-lg shadow-lg"
+    >
+      <div className="h-[200px] overflow-hidden p-4 py-6 relative group">
         <img
           className="w-full h-full object-contain opacity-100 group-hover:opacity-0 trasition-opacity duration-500"
           src={product.images[0].url}
@@ -28,14 +31,15 @@ const Product = ({ product }) => {
           />
         </div>
       </div>
-      <section>
-        <h5>{product.brand}</h5>
-        <h4>{product.title}</h4>
-
-        <span>Price</span>
-        <span> ${product.price}</span>
-
-        <button onClick={handleClickAddProduct}>
+      <section className="border-t-2 p-4 relative">
+        <h5 className="text-gray-400 font-bold">{product.brand}</h5>
+        <h4 className="font-bold">{product.title}</h4>
+        <span className="text-gray-400 font-bold">Price</span> <br />
+        <span className="font-bold"> $ {product.price}</span>
+        <button
+          onClick={handleClickAddProduct}
+          className="absolute right-7 bottom-4 rounded-full bg-emerald-400 hover:bg-emerald-500 transition-all duration-300 ease-in-out text-white w-12 text-2xl grid items-center aspect-square"
+        >
           <i className="bx bxs-cart"></i>
         </button>
       </section>
@@ -48,4 +52,3 @@ Product.propTypes = {
 };
 
 export default Product;
-//TODO: 50:00 QUEDAMOS AQUI
