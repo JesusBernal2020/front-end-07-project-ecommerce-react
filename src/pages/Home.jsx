@@ -50,7 +50,7 @@ const Home = () => {
             id="productName"
             type="text"
             placeholder="What are you looking for..."
-            className="border-2 py-2 px-2 w-56 md:w-96 rounded-l-lg"
+            className="border-2 py-2 px-2 w-56 md:w-96 rounded-l-lg outline-none"
           />
           <button className="bg-emerald-400 hover:bg-emerald-500 transition-all duration-300 ease-in-out px-3 text-2xl text-white rounded-r-lg">
             <i className="bx bx-search"></i>
