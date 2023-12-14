@@ -10,7 +10,7 @@ const Header = () => {
   };
 
   return (
-    <header className="flex justify-between items-center p-5 border-b-2 shadow-md">
+    <header className="flex justify-between items-center p-5 border-b-2 shadow-md lg:z-30">
       <Link to="/" className="font-bold text-emerald-400 text-2xl md:text-3xl">
         E-commerce
       </Link>

@@ -32,7 +32,7 @@ const Cart = () => {
     <section
       className={`fixed top-0 bg-white p-2 h-screen ${
         isShowCart && token ? 'right-0' : '-right-full'
-      } w-[300px] transition-all duration-300 shadow-2xl shadow-black/30 grid grid-rows-[auto_1fr_auto]`}
+      } w-[300px] transition-all duration-300 z-30 shadow-2xl shadow-black/30 grid grid-rows-[auto_1fr_auto]`}
     >
       <button
         onClick={handleClickChangeShowCart}

@@ -29,7 +29,6 @@ const Home = () => {
 
   const handleIsShowFilters = () => {
     setShowFilters(!showFilters);
-    //TODO: TERMINAR FILTROS
   };
 
   useEffect(() => {
@@ -53,20 +52,20 @@ const Home = () => {
       <article
         className={`fixed top-0 w-[300px] ${
           showFilters ? 'left-0' : '-left-full'
-        }  bg-white z-20 min-h-screen pt-5 pb-8 md:w-[300px] mx-auto flex flex-col gap-2`}
+        } transition-all duration-300  bg-white shadow-2xl shadow-black/30 z-20 min-h-screen pt-5 pb-8 lg:w-[320px] mx-auto flex flex-col gap-2 lg:relative lg:left-0 lg:shadow-none`}
       >
         <button
           onClick={handleIsShowFilters}
-          className="absolute top-3 left-3 text-2xl text-emerald-400 hover:text-emerald-500 transition-all duration-300 ease-in-out"
+          className="absolute top-3 left-3 text-2xl text-emerald-400 hover:text-emerald-500 transition-all duration-300 ease-in-out lg:invisible"
         >
           <i className="bx bxs-x-circle"></i>
         </button>
-        <div className="flex justify-center pb-8">
+        <div className="flex justify-center pb-8 lg:invisible">
           <h3 className="p-2 px-4 text-emerald-400 text-3xl font-bold">
             Filters
           </h3>
         </div>
-        <section className="w-[280px] py-2 px-5 ">
+        <section className="w-[280px] py-2 px-5 lg:z-40">
           <h4
             className="flex justify-between cursor-pointer font-bold text-lg border-b-2 border-emerald-400"
             onClick={() => setShowCategories(!showCategories)}
@@ -130,12 +129,12 @@ const Home = () => {
         {/* <h2 className="text-center text-3xl font-bold text-emerald-400 pt-4 pb-10">
           Products
         </h2> */}
-        <div className="grid justify-center">
+        <div className="grid justify-center lg:hidden">
           <h3
             onClick={handleIsShowFilters}
             className="mt-8 mx-5 w-36 flex justify-center text-xl font-bold py-2 px-3 rounded-lg text-white bg-emerald-400 hover:bg-emerald-500"
           >
-            <span className="text-2xl pr-3">
+            <span className="text-2xl pr-3 lg">
               <i className="bx bxs-filter-alt"></i>
             </span>
             Filters
