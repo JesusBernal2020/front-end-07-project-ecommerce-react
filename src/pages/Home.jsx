@@ -11,6 +11,7 @@ const Home = () => {
   const [currentCategory, setCurrentCategory] = useState('');
   const [showCategories, setShowCategories] = useState(false);
   const [showFilters, setShowFilters] = useState(false);
+  const [showPrice, setShowPrice] = useState(false);
 
   const productsByName = products.filter((product) =>
     product.title.toLowerCase().includes(productName)
@@ -25,6 +26,10 @@ const Home = () => {
   const handleClickCategory = (e) => {
     setCurrentCategory(e.target.dataset.category);
     setShowCategories(false);
+  };
+
+  const handleClickPrice = () => {
+    setShowPrice(!showPrice);
   };
 
   const handleIsShowFilters = () => {
@@ -85,7 +90,7 @@ const Home = () => {
             } overflow-hidden duration-300 ease-in-out cursor-pointer`}
           >
             <li
-              className="hover:text-emerald-400 transition-all duration-300 ease-in-out"
+              className="hover:text-emerald-400 transition-all duration-300 ease-in-out pt-4"
               onClick={handleClickCategory}
               data-category=""
             >
@@ -104,12 +109,37 @@ const Home = () => {
           </ul>
         </section>
         <section className="w-[280px] py-2 px-5 ">
-          <h4 className="flex justify-between cursor-pointer font-bold text-lg border-b-2 border-emerald-400">
-            Filters
+          <h4
+            onClick={() => handleClickPrice(!showPrice)}
+            className="flex justify-between cursor-pointer font-bold text-lg border-b-2 border-emerald-400 "
+          >
+            Price
             <span className="pl-4 text-2xl">
-              <i className="bx bx-chevron-up"></i>
+              <i
+                className={`bx ${
+                  showPrice ? 'bx-chevron-up' : 'bx-chevron-down'
+                }`}
+              ></i>
             </span>
           </h4>
+          <form
+            className={`grid gap-1 justify-items-end px-2 transition-opacity transition-height ${
+              showPrice ? 'opacity-100 h-auto' : 'opacity-0 h-0'
+            } overflow-hidden duration-300 ease-in-out cursor-pointer`}
+          >
+            <div className=" py-5 flex justify-between gap-5 items-center">
+              <label className="font-bold text-lg" htmlFor="">
+                To
+              </label>
+              <input
+                className="border-2 rounded-md px-2 py-1 outline-none"
+                type="text"
+              />
+            </div>
+            <button className="bg-emerald-400 w-[100px] rounded-md p-1 hover:bg-emerald-500 transition-all duration-300 ease-in-out text-white">
+              Filter Price
+            </button>
+          </form>
         </section>
       </article>
       <form onSubmit={handleSubmit} className="pt-10 pb-14">
