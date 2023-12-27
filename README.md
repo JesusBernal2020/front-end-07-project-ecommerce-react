@@ -49,7 +49,7 @@ The project is considered completed, but it's currently undergoing updates and b
 
 ## Project Access
 
-You can access the deployed project via this [E-commerce Web](). Additionally, you have the option to clone the project, install the necessary packages using `npm install`, and run it using `npm run dev`.
+You can access the deployed project via this [E-commerce Web](https://strong-gumdrop-1fb70b.netlify.app). Additionally, you have the option to clone the project, install the necessary packages using `npm install`, and run it using `npm run dev`.
 
 ## Developers
 
